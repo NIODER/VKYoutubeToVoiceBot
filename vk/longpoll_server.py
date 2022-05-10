@@ -7,8 +7,8 @@ from vk.vk_requests import Get
 class LongpollServer:
 
     def __init__(self):
-        group_id = open(f"{os.getcwd()}\\Constants\\group_id.constant")
-        api_version = open(f"{os.getcwd()}\\Constants\\api_version.constant")
+        group_id = open(f"{os.getcwd()}\\vk\\Сonstants\\group_id.constant", "r")
+        api_version = open(f"{os.getcwd()}\\vk\\Сonstants\\api_version.constant", "r")
         get = Get("messages.getLongPollServer",
                   f"need_pts=0&group_id={group_id.read()}&lp_version=3&v={api_version.read()}")
         longpoll_server_response = json.loads(get.get_response().text)["response"]

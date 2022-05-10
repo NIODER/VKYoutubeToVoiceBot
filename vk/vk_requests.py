@@ -5,8 +5,8 @@ import requests
 class Get:
 
     def __init__(self, method, params):
-        access_token = open(f"{os.getcwd()}\\Constants\\access_token.constant")
-        api_version = open(f"{os.getcwd()}\\Constants\\api_version.constant")
+        access_token = open(f"{os.getcwd()}\\vk\\Сonstants\\access_token.constant")
+        api_version = open(f"{os.getcwd()}\\vk\\Сonstants\\api_version.constant")
         self.__url = f"https://api.vk.com/method/{method}?{params}&access_token={access_token.read()}" \
                      f"&v={api_version.read()}"
 
@@ -17,8 +17,8 @@ class Get:
 class Post:
 
     def __init__(self, method, content):
-        access_token = open(f"{os.getcwd()}\\Constants\\access_token.constant")
-        api_version = open(f"{os.getcwd()}\\Constants\\api_version.constant")
+        access_token = open(f"{os.getcwd()}\\vk\\Сonstants\\access_token.constant")
+        api_version = open(f"{os.getcwd()}\\vk\\Сonstants\\api_version.constant")
         self.__url = \
             f"https://api.vk.com/method/{method}?access_token={access_token.read()}&v={api_version.read()}"
         self.__content = content
@@ -30,8 +30,8 @@ class Post:
 class GetAsUser:
 
     def __init__(self, method, params):
-        user_access_token = open(f"{os.getcwd()}\\Constants\\user_access_token.constant")
-        api_version = open(f"{os.getcwd()}\\Constants\\api_version.constant")
+        user_access_token = open(f"{os.getcwd()}\\vk\\Сonstants\\user_access_token.constant")
+        api_version = open(f"{os.getcwd()}\\vk\\Сonstants\\api_version.constant")
         self.__url = f"https://api.vk.com/method/{method}?{params}&access_token={user_access_token.read()}" \
                      f"&v={api_version.read()}"
 
